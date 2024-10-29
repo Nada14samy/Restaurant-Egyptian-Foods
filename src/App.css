@@ -1,0 +1,4 @@
+header ul li:hover {
+    color: #ED0707;
+    transition: 500ms;
+   }
