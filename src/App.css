@@ -1,4 +1,8 @@
 header ul li:hover {
     color: #ED0707;
     transition: 500ms;
-   }
+}
+
+.about ul li::marker {
+    color: #ED0707;
+}

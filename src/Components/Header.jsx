@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
+import homeImage from "../Image/home.png";
+import { GoArrowDown } from "react-icons/go";
+
 
 
 const Header = () => {
 
     const [open, setOpen] = useState(false);
     
-  return (
-    <section className='bg-gradient-to-r from-[#000000] to-[#666666] h-[50vw] overflow-hidden'>
-        {/* NavBar */}
-        <header>    
+    return (
+      <section className='bg-gradient-to-r from-[#000000] max-h-screen to-[#666666] overflow-hidden'>
+      
+      {/* NavBar */}
+      <header>    
         <nav className='flex justify-between px-[7%] items-center md:h-14 h-14 mx-auto text-white'>
             <div>
 
@@ -31,11 +35,24 @@ const Header = () => {
 
             </div>
         </nav>
-        </header>
+      </header>
 
-    {/* Home */}
+      {/* Home */}
+      <section className='lg:flex lg:my-[10%] gird lg:justify-between lg:grid-cols-2 text-white px-[7%]'>
+        <div className='col-span-1 py-7'>
+          <p className='text-4xl font-bold text-center'>Welcome To <br />
+          Our <span className='text-[#ED0707]'>House</span> Foods</p>
+          <div className='text-1xl text-center mt-5 lg:float-end'>
+            <p>Order Now <br /><p className='place-self-center'><GoArrowDown/></p></p>         
+          </div>        
+        </div>
+        <div className='col-span-1'>
+          {/* Add in src ==> Group for images */}
+          <img className='w-96 place-self-center mt-[-10%]' src={homeImage} alt="..." />
+        </div>
+      </section>
 
-  </section>
+    </section>
   )
 }
 
