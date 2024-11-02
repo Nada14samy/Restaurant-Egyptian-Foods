@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import homeImage from "../Image/home.png";
+import {NavLink} from "react-router-dom";
+// image
+import homeImage from "../../Image/home.png";
+// icon
 import { GoArrowDown } from "react-icons/go";
 
 
@@ -22,9 +25,9 @@ const Header = () => {
             <div className={ `md:static absolute md:min-h-fit  min-h-[30vh] left-0 transition-all duration-500 md:duration-0 md:z-0  opacity-90 ease-in-out md:w-auto w-full flex text-center items-center ${open?'top-[8%] mb-5 z-[1] bg-black':'top-[-100%]'}`}>
 
             <ul className='flex md:flex-row mx-auto flex-col md:items-center md:gap-[4vw] gap-6 font-sans font-medium item-center'>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Best order</a></li>
-                <li><a href="#">Menu</a></li>
+                <li><NavLink to="/">Home</NavLink></li>
+                <li><NavLink to="/order">Best order</NavLink></li>
+                <li><NavLink to="/menu">Menu</NavLink></li>
             </ul>
 
             </div>
