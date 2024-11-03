@@ -6,3 +6,7 @@ header ul li:hover {
 .about ul li::marker {
     color: #ED0707;
 }
+
+.active{
+    color: #ED0707;
+}

@@ -1,8 +1,8 @@
 import React from 'react';
-import mashawe from '../Image/mashawe.png';
-import builder from '../Image/builder.png';
-import faveBean from '../Image/fave-bean.png';
-import aboutImage from '../Image/about.png';
+import mashawe from '../../Image/mashawe.png';
+import builder from '../../Image/builder.png';
+import faveBean from '../../Image/fave-bean.png';
+import aboutImage from '../../Image/about.png';
 
 const About = () => {
   return (
