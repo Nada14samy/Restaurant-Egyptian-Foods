@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+xmlns:xlink="http://www.w3.org/1999/xlink"
+ height="800" width="1200" 
+ viewBox="-2.5147185 -1.0336275 21.794227 6.201765">
+ <use y="461.6857" x="604.46722" xlink:href="#b" width="100%"
+  height="100%" transform="translate(-15.81035 -255.6915) scale(.35278)" 
+  fill="#fff"/>
+  <use y="72.4402" x="63.51625" 
+  xlink:href="#c" width="100%" 
+  height="100%" transform="translate(-15.81035 -255.6915) scale(.35278)"
+   fill="#5e5e61"/><use y="72.4402" x="87.3641" xlink:href="#d" width="100%"
+    height="100%" transform="translate(-15.81035 -255.6915) scale(.35278)" 
+    fill="#5e5e61"/><use y="83.4412" x="85.5401" xlink:href="#d" width="100%" height="100%" 
+    transform="translate(-15.81035 -255.6915) scale(.35278)" fill="#5e5e61"/>
+    <use y="94.4422" x="62.8826" xlink:href="#d" width="100%" height="100%"
+     transform="translate(-15.81035 -255.6915) scale(.35278)" fill="#5e5e61"/>
+     <use y="105.4432" x="63.0023" xlink:href="#c" width="100%" height="100%" 
+     transform="translate(-15.81035 -255.6915) scale(.35278)" fill="#5e5e61"/>
+     <use y="105.4432" x="64.2886" xlink:href="#d" width="100%" height="100%"
+      transform="translate(-15.81035 -255.6915) scale(.35278)" fill="#5e5e61"/>
+      <use y="116.4442" x="65.0201" xlink:href="#d" width="100%" height="100%"
+       transform="translate(-15.81035 -255.6915) scale(.35278)" fill="#5e5e61"/>
+       <use y="182.4502" x="44.6217" xlink:href="#c" width="100%" height="100%"
+        transform="translate(-15.81035 -255.6915) scale(.35278)" fill="#5e5e61"/>
+        <use y="61.8975" x="246.70285" xlink:href="#e" width="100%" height="100%"
+         transform="translate(-15.81035 -255.6915) scale(.35278)" fill="#ee3023"/>
+         <use y="73.3545" x="308.39111" xlink:href="#d" width="100%" height="100%"
+          transform="translate(-15.81035 -255.6915) scale(.35278)" fill="#5e5e61"/>
+          <use y="101.769" x="231.27486" xlink:href="#e" width="100%" height="100%"
+           transform="translate(-15.81035 -255.6915) scale(.35278)" fill="#ee3023"/>
+           <use y="113.226" x="261.43259" xlink:href="#d" width="100%" height="100%"
+            transform="translate(-15.81035 -255.6915) scale(.35278)" fill="#5e5e61"/>
+            <use y="141.6405" x="222.4351" xlink:href="#e" width="100%" height="100%" 
+            transform="translate(-15.81035 -255.6915) scale(.35278)" fill="#ee3023"/>
+            <path d="M4.13413 2.06726c0 1.14168-.9252 2.06726-2.06687 2.06726C.92557 4.13452 
+            0 3.20894 0 2.06726S.92557 0 2.06726 0c1.14168 0 2.06687.92558 2.06687 2.06726" 
+            fill="#ee3023"/>
+            <path d="M2.08359 
+            3.21996C1.51579 3.22189.9248 2.73723.92216 1.95864.92026 1.444 
+            1.19827.94837 1.553.6544c.34637-.28637.82075-.47057 1.25068-.4721.05545
+             0 .11356.00456.14888.01671-.376.07786-.67528.42804-.67414.82493
+              0 .01329.00113.02734.00264.0338.62933.15344.91494.53324.91684 
+              1.0585.00152.52565-.41322 1.10143-1.11434 1.1037" fill="#fff"/>
+              
+</svg>
