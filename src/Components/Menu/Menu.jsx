@@ -8,7 +8,7 @@ function Menu() {
   return (
     <>
         
-        <section className="w-full h-fit my-5 py-5 flex flex-col justify-center items-center">
+        <section className="w-full h-fit my-5 py-5 flex flex-row justify-center items-center">
             <div className="w-10/12 flex flex-col justify-center items-center  max-lg:w-full max-md:w-11/12">
             <div className="w-full flex justify-center items-center gap-10 flex-wrap mb-10">
                 {
@@ -19,7 +19,7 @@ function Menu() {
                     ))
                 }
             </div>
-            <div className="w-full flex  items-center gap-10 flex-wrap my-5 max-md:gap-5 max-lg:justify-center  ">
+            <div className="w-full flex items-center lg:justify-center gap-10 flex-wrap my-5 max-md:gap-5 max-lg:justify-center  ">
                 {
                     Array.from({length : 10} , (_ , index)=>(
                         <Card key={index} />

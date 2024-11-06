@@ -1,11 +1,17 @@
-import React from "react";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-// import Slider from "react-slick";
+import React from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+// import required modules
+import { Pagination } from 'swiper/modules';
 import Card from "../Card/Card.jsx";
 
 function Order() {
-   
+
   return (
     <>
       <section className="w-full  h-screen flex flex-col justify-center items-center my-10">
@@ -15,17 +21,27 @@ function Order() {
         </h3>
         <p className="font-medium text-gray text-[40px] max-md:text-2xl">Order Now</p>
       </div>
+
         <div className="flex w-[95%] h-full justify-around pl-9 max-md:pl-5 items-center gap-8 overflow-hidden">
+          <Swiper
+            slidesPerView={4}
+            spaceBetween={30}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            className="mySwiper p-4"
+          >
             {
-              Array.from({length: 10},(_,index)=>(
-                <div className="">
-                  <Card  />
+              Array.from({length: 10},(_,index)=>(                
+                <div>
+                    <SwiperSlide>
+                      <Card />
+                    </SwiperSlide>
                 </div>
               ))
             }
-        </div>
-        <div>
-        
+            </Swiper>
         </div>
       </section>
     </>
