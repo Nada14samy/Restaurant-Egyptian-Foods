@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -10,10 +10,27 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import Card from "../Card/Card.jsx";
 
-function Order() {
 
+//handle width of screen 
+// function useWindoSize () {
+//   const [size, setSize] = useState([window.innerWidth]);
+//   useEffect(() => {
+//     const handleResize = () => {
+//       setSize([window.innerWidth]);
+//     };
+//     window.addEventListener("resize", handleResize);
+//   }, [])
+//   return size;
+// }
+
+function Order() {
+  // const [width] = useWindoSize();
   return (
     <>
+    {/* vlue of width
+    `<h4 className=' text-red-700'>
+      width: ${width}
+    </h4>` */}
       <section className="w-full  h-screen flex flex-col justify-center items-center my-10">
       <div className="w-[70%] flex flex-col justify-center items-center">
         <h3 className="text-[50px] font-medium text-center max-md:text-2xl mb-8">
