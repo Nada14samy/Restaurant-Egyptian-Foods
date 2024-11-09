@@ -38,7 +38,7 @@ function Menu() {
                     ))
                 }
             </div>
-            <div className="w-full flex  items-center gap-10 flex-wrap my-5 max-md:gap-5 max-lg:justify-center  ">
+            <div className="w-full flex items-center lg:justify-center gap-10 flex-wrap my-5 max-md:gap-5 max-lg:justify-center  ">
                 {
                     IsLoading
                     ?
