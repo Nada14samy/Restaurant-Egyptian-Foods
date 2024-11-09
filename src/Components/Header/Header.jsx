@@ -1,16 +1,26 @@
 import React, { useState } from 'react';
-import {NavLink} from "react-router-dom";
+import {Link , NavLink , useNavigate} from "react-router-dom";
 // image
 import homeImage from "../../Image/home.png";
 // icon
 import { GoArrowDown } from "react-icons/go";
-
-
+import {  FaCartPlus } from "react-icons/fa";
+// cookies
+import Cookies from "js-cookie";
 
 const Header = () => {
-
+    const navigate = useNavigate();
     const [open, setOpen] = useState(false);
     
+    const HandleClick = ()=>{
+      if(Cookies.get("token")){
+        Cookies.remove("token");
+        setTimeout(()=>{
+          navigate("/");
+        } , 1000)
+      }
+    }
+
     return (
       <section className='bg-gradient-to-r from-[#000000] max-h-screen to-[#666666] overflow-hidden'>
       
@@ -32,8 +42,22 @@ const Header = () => {
 
             </div>
             <div className='flex items-center gap-4'>
-
-            <button className="rounded-2xl h-[27px] px-5 bg-[#A30114] duration-500 hover:bg-[#ED0707]"><p>Login</p></button>
+            {
+                Cookies.get("token") ?
+                <>
+                  <span className="text-3xl cursor-pointer">
+                    <FaCartPlus />
+                  </span>
+                  <button onClick={HandleClick} className="rounded-2xl h-[27px] px-5 bg-[#A30114] duration-500 hover:bg-[#ED0707]">
+                     Log Out
+                  </button>
+                </>
+                :
+                <>
+                   <button className="rounded-2xl h-[27px] px-5 bg-[#A30114] duration-500 hover:bg-[#ED0707]"><Link to="/login-page">Login</Link></button>
+                   <button className="rounded-2xl h-[27px] px-5 bg-[#A30114] duration-500 hover:bg-[#ED0707]"><Link to="/sign-up-page">Sign Up</Link></button>
+                </>
+            }
             <button onClick={()=>setOpen(!open)} className="cursor-pointer text-2xl md:hidden"><ion-icon name={open ? 'close':'menu'}></ion-icon></button>
 
             </div>

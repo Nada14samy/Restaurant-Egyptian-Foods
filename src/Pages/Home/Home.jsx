@@ -21,7 +21,6 @@ function Home() {
         </h3>
         <Menu />
       </section>
-      
       <DeliveryService />
       <Footer />
     </>
