@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {Link , NavLink , useNavigate} from "react-router-dom";
 // image
 import homeImage from "../../Image/home.png";
+import bgHomeImage from "../../Image/bgHome.png";
 // icon
 import { GoArrowDown } from "react-icons/go";
 import {  FaCartPlus } from "react-icons/fa";
@@ -22,7 +23,7 @@ const Header = () => {
     }
 
     return (
-      <section className='bg-gradient-to-r from-[#000000] max-h-screen to-[#666666] overflow-hidden'>
+      <section className='bg-local overflow-hidden' style={{backgroundImage: `url(${bgHomeImage})`}}>
       
       {/* NavBar */}
       <header>    
@@ -68,9 +69,9 @@ const Header = () => {
       <section className='lg:flex lg:my-[10%] gird lg:justify-between lg:grid-cols-2 text-white px-[7%]'>
         <div className='col-span-1 py-7'>
           <p className='text-4xl font-bold text-center'>Welcome To <br />
-          Our <span className='text-[#ED0707]'>House</span> Foods</p>
+          Our <span className='text-[#ED0707] border-solid border-b-2 rounded border-yellow'>House</span> Foods</p>
           <div className='text-1xl text-center mt-5 lg:float-end'>
-            <p>Order Now <br /><p className='place-self-center'><GoArrowDown/></p></p>         
+            <p>Order Now</p><br /><p className='place-self-center'><GoArrowDown/></p>         
           </div>        
         </div>
         <div className='col-span-1'>
