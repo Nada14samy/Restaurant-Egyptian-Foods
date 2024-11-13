@@ -71,7 +71,9 @@ const Header = () => {
           <p className='text-4xl font-bold text-center'>Welcome To <br />
           Our <span className='text-[#ED0707] border-solid border-b-2 rounded border-yellow'>House</span> Foods</p>
           <div className='text-1xl text-center mt-5 lg:float-end'>
-            <p>Order Now</p><br /><p className='place-self-center'><GoArrowDown/></p>         
+            <p>Order Now</p>
+            <br />
+            <p className='place-self-center'><GoArrowDown/></p>         
           </div>        
         </div>
         <div className='col-span-1'>
