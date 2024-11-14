@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import "./Header.css";
 import {Link , NavLink , useNavigate} from "react-router-dom";
 // image
-import homeImage from "../../Image/home.png";
+import homeImage from "../../Image/groupHome.png";
 import bgHomeImage from "../../Image/bgHome.png";
 // icon
 import { GoArrowDown } from "react-icons/go";
@@ -23,7 +24,7 @@ const Header = () => {
     }
 
     return (
-      <section className='bg-local overflow-hidden' style={{backgroundImage: `url(${bgHomeImage})`}}>
+      <section className='bg-local overflow-hidden allSecHome' style={{backgroundImage: `url(${bgHomeImage})`}}>
       
       {/* NavBar */}
       <header>    
@@ -67,8 +68,8 @@ const Header = () => {
 
       {/* Home */}
       <section className='lg:flex lg:my-[10%] gird lg:justify-between lg:grid-cols-2 text-white px-[7%]'>
-        <div className='col-span-1 py-7'>
-          <p className='text-4xl font-bold text-center'>Welcome To <br />
+        <div className='col-span-1 py-14'>
+          <p className='text-4xl max-md:text-3xl max-lg:place-content-center font-bold text-center place-content-start'>Welcome To <br />
           Our <span className='text-[#ED0707] border-solid border-b-2 rounded border-yellow'>House</span> Foods</p>
           <div className='text-1xl text-center mt-5 lg:float-end'>
             <p>Order Now</p>
@@ -78,7 +79,7 @@ const Header = () => {
         </div>
         <div className='col-span-1'>
           {/* Add in src ==> Group for images */}
-          <img className='w-96 place-self-center mt-[-10%]' src={homeImage} alt="..." />
+          <img className='w-8/12 max-lg:place-self-center place-self-end mt-[-10%] duration-700' src={homeImage} alt="..." />
         </div>
       </section>
 
