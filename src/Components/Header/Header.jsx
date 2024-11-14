@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Header.css";
 import {Link , NavLink , useNavigate} from "react-router-dom";
 // image
@@ -22,6 +22,19 @@ const Header = () => {
         } , 1000)
       }
     }
+
+    // make rotation and animation on home when onload the site
+    const [rotation, setRotation] = useState(0);
+    
+    useEffect(() => {
+      setRotation(90);
+    }, []);
+    
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+      setIsVisible(true);
+    }, []);
 
     return (
       <section className='bg-local overflow-hidden allSecHome' style={{backgroundImage: `url(${bgHomeImage})`}}>
@@ -69,9 +82,9 @@ const Header = () => {
       {/* Home */}
       <section className='lg:flex lg:my-[10%] gird lg:justify-between lg:grid-cols-2 text-white px-[7%]'>
         <div className='col-span-1 py-14'>
-          <p className='text-4xl max-md:text-3xl max-lg:place-content-center font-bold text-center place-content-start'>Welcome To <br />
+          <p className='text-4xl max-md:text-3xl max-lg:place-content-center font-bold text-center place-content-start overflow-hidden'  style={{ transform: isVisible ? 'translateX(0)' : 'translateX(-100%)', transition: 'transform 1s ease-in-out'}}>Welcome To <br />
           Our <span className='text-[#ED0707] border-solid border-b-2 rounded border-yellow'>House</span> Foods</p>
-          <div className='text-1xl text-center mt-5 lg:float-end'>
+          <div className='text-1xl text-center mt-5 lg:float-end'  style={{ transform: isVisible ? 'translateY(0)' : 'translateY(400%)', transition: 'transform 1s ease-in-out'}}>
             <p>Order Now</p>
             <br />
             <p className='place-self-center'><GoArrowDown/></p>         
@@ -79,7 +92,7 @@ const Header = () => {
         </div>
         <div className='col-span-1'>
           {/* Add in src ==> Group for images */}
-          <img className='w-8/12 max-lg:place-self-center place-self-end mt-[-10%] duration-700' src={homeImage} alt="..." />
+          <img className='w-8/12 max-lg:place-self-center place-self-end mt-[-10%] duration-700' style={{transform: `rotate(${rotation}deg)`, transition: `transform 1s ease-in-out`}} src={homeImage} alt="..." />
         </div>
       </section>
 
