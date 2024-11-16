@@ -48,8 +48,10 @@ function Login() {
                     toast.success("Wellcome Back !" , 
                         {position: "top-center"} , {autoClose : 2000});
                     let token = res.data.JWT;
-                    Cookies.set(token);
-                    navigate("/");
+                    Cookies.set("token" , token , { expires: 365, path: '/' });
+                    setTimeout(()=>{
+                        navigate("/");
+                    } , 3000);
                 }
             }
         }catch(err){

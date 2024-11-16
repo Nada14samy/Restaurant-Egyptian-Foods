@@ -51,7 +51,7 @@ function SignUp() {
                     toast.success('Successfully Registered',
                         {position: "top-center"} , {autoClose : 2000});
                     let token = res.data.token;
-                    Cookies.set(token);
+                     Cookies.set("token" , token , { expires: 365, path: '/' });
                     setTimeout(()=>{
                         navigate("/");
                     } , 2000);
