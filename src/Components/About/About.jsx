@@ -1,6 +1,6 @@
 import React from 'react';
 import mashawe from '../../Image/mashawe.png';
-import builder from '../../Image/builder.png';
+import koshary from '../../Image/koshare.png';
 import faveBean from '../../Image/fave-bean.png';
 import aboutImage from '../../Image/about.png';
 
@@ -22,12 +22,12 @@ const About = () => {
         </div>
         <div className='bg-[#353535] col-span-1 p-3 relative flex justify-between text-center'>
             <div>
-                <h1 className='font-bold text-2xl'>builder</h1>
+                <h1 className='font-bold text-2xl'>koshary</h1>
                 <h6 className='my-3 text-zinc-200'>20% <br />discount</h6>
                 <b className='font-bold text-2xl'>$13.90</b>
             </div>
             <div>
-                <img className='w-24' src={builder} alt="builder" />
+                <img className='w-24' src={koshary} alt="koshary" />
             </div>
         </div>
         <div className='bg-[#FFB52C] col-span-1 p-3 relative flex justify-between text-center'>

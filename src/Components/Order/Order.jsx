@@ -86,13 +86,19 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import axios from "axios";
 import API_BASE_URL from '../../API.jsx';
 // Import Swiper styles
+
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/free-mode';
+
 
 // import required modules
 import { Pagination } from 'swiper/modules';
 
 // component 
+import Card from "../Card/Card.jsx";
+import { FreeMode, Pagination } from 'swiper/modules';
+// import { RxArrowBottomRight } from 'react-icons/rx';
 import Card from "../Card/Card.jsx";
 
 function Order() {
@@ -123,15 +129,23 @@ function Order() {
           </h3>
           <p className="font-medium text-gray text-[40px] max-md:text-2xl">Order Now</p>
         </div>
-
-        <div className="flex w-[95%] h-full justify-around pl-9 max-md:pl-5 items-center gap-8 overflow-hidden">
+        <div className="flex w-[95%] h-full justify-around items-center gap-8 overflow-hidden">
           <Swiper
             slidesPerView={2}
             spaceBetween={10}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              }
+            }}
+            freeMode={true}
             pagination={{
               clickable: true,
             }}
-            modules={[Pagination]}
+            modules={[FreeMode, Pagination]}
             className="mySwiper p-4"
           >
             {
@@ -155,6 +169,7 @@ function Order() {
             }
           </Swiper>
         </div>
+
       </section>
     </>
   );
