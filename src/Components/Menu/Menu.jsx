@@ -39,15 +39,15 @@ function Menu() {
       
         <section className="w-full h-fit my-5 py-5 flex flex-col justify-center items-center">
             <div className="w-10/12 flex flex-col justify-center items-center  max-lg:w-full max-md:w-11/12">
-            <div className="w-full flex justify-center items-center gap-10 flex-wrap mb-10">
+            <div className="w-full flex justify-center items-center gap-5 flex-wrap mb-10">
                 {
                     category.map((item , index)=>(
-                        <button onClick={HandleClickButton} key={index} className={`btn-${index} px-10 text-[20px] font-medium py-2 rounded-[25px] border-yellow border-[2px] border-solid `}>
+                        <button onClick={HandleClickButton} key={index} className={`btn-${index} px-10 text-[20px] font-medium py-1 rounded-[25px] border-yellow border-[2px] border-solid `}>
                             {item}
                         </button>
                     ))
                 }
-                <Link to="/menu" className={`px-10 text-[20px] font-medium py-2 rounded-[25px] bg-yellow text-lightWhite border-yellow border-[2px] border-solid `}>
+                <Link to="/menu" className={`px-10 text-[20px] font-medium py-1 rounded-[25px] bg-darkRed text-lightWhite border-darkRed border-[2px] border-solid `}>
                     All
                 </Link>
             </div>
@@ -62,7 +62,7 @@ function Menu() {
                     Loading...
                     </>
                 ) : (
-                    card.map((item, index) => (
+                    card.slice(0 , 8).map((item, index) => (
                     <Card 
                         key={index} 
                         Id={item._id}

@@ -13,10 +13,11 @@ import Cookies from "js-cookie";
 const Header = () => {
     const navigate = useNavigate();
     const [open, setOpen] = useState(false);
-    
+       
     const HandleClick = ()=>{
       if(Cookies.get("token")){
         Cookies.remove("token");
+        Cookies.remove("userId");
         setTimeout(()=>{
           navigate("/");
         } , 1000)

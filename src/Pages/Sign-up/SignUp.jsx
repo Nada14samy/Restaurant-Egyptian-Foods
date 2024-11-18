@@ -47,11 +47,14 @@ function SignUp() {
                     "Email": from.email,
                     "Password": from.password
                 });
+               
                 if(res.status === 200){
                     toast.success('Successfully Registered',
                         {position: "top-center"} , {autoClose : 2000});
                     let token = res.data.token;
+                    let userId = res.data.data._id;
                      Cookies.set("token" , token , { expires: 365, path: '/' });
+                     Cookies.set("userId" , userId , { expires: 365, path: '/' });
                     setTimeout(()=>{
                         navigate("/");
                     } , 2000);
