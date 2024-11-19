@@ -10,6 +10,8 @@ import {  FaCartPlus } from "react-icons/fa";
 // cookies
 import Cookies from "js-cookie";
 
+
+
 const Header = () => {
     const navigate = useNavigate();
     const [open, setOpen] = useState(false);

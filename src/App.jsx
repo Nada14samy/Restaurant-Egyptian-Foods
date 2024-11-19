@@ -2,6 +2,7 @@ import React , {Suspense, useState ,useEffect} from 'react';
 import {BrowserRouter , Routes , Route} from "react-router-dom";
 import './App.css';
 
+
 // components
 import Home from "./Pages/Home/Home.jsx";
 import MenuPage from "./Pages/Menu-page/MenuPage.jsx";
