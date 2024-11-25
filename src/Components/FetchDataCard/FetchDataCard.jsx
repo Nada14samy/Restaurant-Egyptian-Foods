@@ -34,7 +34,14 @@ function FetchDataCard({onDataFetch}) {
                 </div>
                 :
                   card.map((item , index)=>(
-                    <Card key={index} Salary={item.Salary} Image={item.Image} Name={item.Name} Description={item.Description} TotalRating={item.TotalRating}  />
+                    <Card 
+                        key={index} 
+                        Salary={item.Salary} 
+                        Image={item.Image} 
+                        Name={item.Name} 
+                        Description={item.Description} 
+                        TotalRating={item.TotalRating}  
+                    />
                 ))
             }
         </>

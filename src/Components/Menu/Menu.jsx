@@ -6,19 +6,24 @@ import API_BASE_URL from '../../API.jsx';
 // component
 import Card from "../Card/Card.jsx";
 
-function Menu() {
+function Menu(props) {
     const [card, setCard] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [category , setCategory] = useState([]);
+    const [allData, setAllData] = useState([]); 
+    const [filteredData, setFilteredData] = useState([]);
     const [Button , setButton] = useState("");
     const [Error , setError] = useState("");
-   
+   console.log(Button);
+   console.log(category);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`${API_BASE_URL}/items/menu/${Button}`);
-        setCard(res.data.result);
-        let categoryFilter = [...new Set(res.data.result.map(item => item.Category))];
+        const res = await axios.get(`${API_BASE_URL}/items/menu`);
+        let data = res.data.result;
+        setCard(data);
+        setAllData(data);
+        let categoryFilter = [...new Set(data.map(item => item.Category))];
         setCategory(categoryFilter);
       } catch (err) {
         setError("please try again later");
@@ -29,11 +34,20 @@ function Menu() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if (Button) {
+      // تطبيق الفلتر عند اختيار زر
+      setFilteredData(allData.filter((item) => item.Category === Button));
+    } else {
+      // عرض كل البيانات عند عدم اختيار فلتر
+      setFilteredData(allData);
+    }
+  }, [Button, allData]);
+
     const HandleClickButton = (event)=>{
         setButton(event.target.textContent);
     }
-    
-  
+
   return (
     <>
       
@@ -42,12 +56,18 @@ function Menu() {
             <div className="w-full flex justify-center items-center gap-5 flex-wrap mb-10">
                 {
                     category.map((item , index)=>(
-                        <button onClick={HandleClickButton} key={index} className={`btn-${index} px-10 text-[20px] font-medium py-1 rounded-[25px] border-yellow border-[2px] border-solid `}>
+                        <button onClick={HandleClickButton} key={index} className={`btn-${index}
+                          ${
+                            Button === item ?
+                            "bg-yellow border-yellow text-lightWhite":
+                            "border-yellow text-black"
+                          }
+                         px-10 text-[20px] font-medium py-1 rounded-[25px]  border-[2px] border-solid `}>
                             {item}
                         </button>
                     ))
                 }
-                <Link to="/menu" className={`px-10 text-[20px] font-medium py-1 rounded-[25px] bg-darkRed text-lightWhite border-darkRed border-[2px] border-solid `}>
+                <Link to="/menu" className={`${props.Style} px-10 text-[20px] font-medium py-1 rounded-[25px] bg-darkRed text-lightWhite border-darkRed border-[2px] border-solid `}>
                     All
                 </Link>
             </div>
@@ -62,7 +82,7 @@ function Menu() {
                     Loading...
                     </>
                 ) : (
-                    card.slice(0 , 8).map((item, index) => (
+                    filteredData.slice(0 , 8).map((item, index) => (
                     <Card 
                         key={index} 
                         Id={item._id}
@@ -73,8 +93,7 @@ function Menu() {
                         TotalRating={item.TotalRating} 
                     />
                     ))
-                )
-                }
+                )}
             </div>
             </div>
         </section>

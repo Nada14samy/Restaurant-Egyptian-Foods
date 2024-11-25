@@ -10,7 +10,7 @@ function MenuPage() {
   return (
     <>
       <Header />
-      <Menu />
+      <Menu Style="hidden" />
       <Footer />
     </>
   )
