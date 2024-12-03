@@ -17,7 +17,7 @@ function Order() {
       setCard(res.data.result || []); // Fallback to an empty array 
     } catch (err) {
       console.error("API Error:", err); // Log error details 
-      setError('Failed to load menu items. Please try again.');
+      setError('Failed to load. Please try again.');
     } finally {
       setIsLoading(false);
     }
@@ -27,13 +27,24 @@ function Order() {
     fetchData();
   }, []);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % card.length);
-  };
+  // const nextSlide = () => {
+  //   setCurrentIndex((prevIndex) => (prevIndex + 1) % card.length);
+  // };
+  
+  // const prevSlide = () => {
+  //   setCurrentIndex((prevIndex) => (prevIndex - 1 + card.length) % card.length);
+  // };
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + card.length) % card.length);
-  };
+
+  //button for slider
+  const slide = document.querySelector('.slide')
+  const nextButton = () => {
+    slide.scrollBy({ left: 200, behavior: 'smooth' })
+  }
+  const prevButton = () => {
+    slide.scrollBy({ left: -200, behavior: 'smooth' })
+  }
+
 
   return (
     <>
@@ -49,10 +60,10 @@ function Order() {
         ) : error ? (
           <div className="text-red-500">{error}</div>
         ) : (
-          <div className="flex w-full h-full justify-center items-center gap-10">
+          <div className="slide flex w-[90%] h-full justify-start px-5 items-center gap-10 overflow-x-auto">
               {card.map((item, index) => (
                   <Card
-                   key={index}
+                    key={index}
                     Salary={item.Salary}
                     Image={item.Image}
                     Name={item.Name}
@@ -60,8 +71,13 @@ function Order() {
                     TotalRating={item.TotalRating}
                   />
               ))}
-          </div> 
+          </div>  
         )}
+
+        <div className='flex gap-5'>
+          <button onClick={()=> {prevButton()}} className='rounded-3xl prev border border-spacing-2 text-white bg-slate-950 p-3'>prev</button>
+          <button onClick={()=> {nextButton()}} className='rounded-3xl next border border-spacing-2 text-white bg-slate-950 p-3'>next</button>
+        </div>
       </section>
     </>
   );
