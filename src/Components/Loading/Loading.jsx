@@ -12,8 +12,6 @@ function Loading() {
             <div className="panHandle"></div>
             </div>
             <div className="panShadow"></div>
-            <h1>GOOD BYE JUNK FOOD,<br />
-            HELLO SUPER HEALTHY FOOD!</h1>
         </div>
       </div>
     </main>
